@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="742.0" prefWidth="1153.0" style="-fx-background-radius: 50; -fx-border-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); -fx-border-width: 10; -fx-border-radius: 50; -fx-background-color: linear-gradient(to right bottom, #f3fcff, #c8ffff, #b0ffe5, #c7ffac, #fffc6e);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.premierleague.pos.controller.ClubDetailFormViewController">
+   <children>
+      <Text layoutX="346.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Premier League - 2020" underline="true" wrappingWidth="583.6708984375">
+         <font>
+            <Font name="Algerian" size="51.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#316ce1" />
+                  <Stop color="#da2020" offset="0.5" />
+                  <Stop color="#00390a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <ImageView fx:id="imgLogo" fitHeight="121.0" fitWidth="136.0" layoutX="208.0" onDragDetected="#imgLogo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/garena_100px.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="mainpane" layoutX="30.0" layoutY="131.0" prefHeight="572.0" prefWidth="1097.0">
+         <children>
+            <TabPane prefHeight="572.0" prefWidth="1097.0" side="RIGHT" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab closable="false" text="Club Details">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="326.0" prefWidth="1015.0">
+                           <children>
+                              <TableView fx:id="tblClubDetails" layoutX="17.0" layoutY="46.0" prefHeight="504.0" prefWidth="1028.0" stylesheets="@style/TableStyles.css">
+                                <columns>
+                                  <TableColumn fx:id="colClubName" prefWidth="253.0" text="Club Name" />
+                                  <TableColumn fx:id="colWins" minWidth="0.0" prefWidth="96.0" sortType="DESCENDING" text="Wins" />
+                                    <TableColumn fx:id="colDraws" prefWidth="90.0" sortType="DESCENDING" text="Draws" />
+                                    <TableColumn fx:id="colDefeats" prefWidth="103.0" sortType="DESCENDING" text="Defeats" />
+                                    <TableColumn fx:id="colReceivedGoals" prefWidth="123.0" sortType="DESCENDING" text="ReceivedGoals " />
+                                    <TableColumn fx:id="colScoredGoals" prefWidth="120.0" sortType="DESCENDING" text="ScoredGoals " />
+                                    <TableColumn fx:id="colPoints" prefWidth="104.0" sortType="DESCENDING" text="Points " />
+                                    <TableColumn fx:id="colMatch" prefWidth="138.0" sortType="DESCENDING" text="PlayedMatches" />
+                                </columns>
+                                 <styleClass>
+                                    <String fx:value="column-header" />
+                                    <String fx:value="column-header-background" />
+                                    <String fx:value="label" />
+                                    <String fx:value="table-view" />
+                                 </styleClass>
+                              </TableView>
+                              <Text fill="#c64242" layoutX="118.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you want to sort (corresponding to goal, point ... columns) click on the arrow in the column header of the table" wrappingWidth="771.6708984375">
+                                 <font>
+                                    <Font name="Times New Roman Bold Italic" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab closable="false" text="Search Match ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="45.0" layoutY="14.0" opacity="0.4" prefHeight="121.0" prefWidth="465.0" style="-fx-background-color: #747d8c;" />
+                              <Pane layoutX="557.0" layoutY="13.0" opacity="0.4" prefHeight="121.0" prefWidth="451.0" style="-fx-background-color: #747d8c;" />
+                              <Pane layoutX="951.0" layoutY="-7.0" opacity="0.68" prefHeight="113.0" prefWidth="105.0" style="-fx-background-color: #ff4757;" />
+                              <Pane layoutX="-9.0" layoutY="-5.0" opacity="0.68" prefHeight="113.0" prefWidth="115.0" style="-fx-background-color: #ff4757;">
+                                 <children>
+                                    <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="36.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../asserts/soccer_ball_100px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Text fill="#252525" layoutX="1.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Club 1">
+                                 <font>
+                                    <Font name="Balloon Extra Bold" size="32.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#252525" layoutX="948.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Club 2">
+                                 <font>
+                                    <Font name="Balloon Extra Bold" size="32.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="981.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../asserts/soccer_ball_100px.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="txtClub1" layoutX="148.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="358.6708984375">
+                                 <font>
+                                    <Font name="Times New Roman" size="45.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="txtClub2" layoutX="618.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="324.6708984375">
+                                 <font>
+                                    <Font name="Times New Roman" size="45.0" />
+                                 </font>
+                              </Text>
+                              <JFXButton fx:id="btnGenarate" buttonType="RAISED" layoutX="457.0" layoutY="145.0" onAction="#btnGenarateOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 50;" text="Genarate" textFill="WHITE">
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5568181818181818" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#76eaff" />
+                                          <Stop color="#76eaff" offset="0.007246376811594203" />
+                                          <Stop color="#f34fff" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                                 <font>
+                                    <Font name="Victorian LET Plain:1.0" size="21.0" />
+                                 </font>
+                              </JFXButton>
+                              <Text fill="#2a00c3" layoutX="496.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VS">
+                                 <font>
+                                    <Font name="Victorian LET Plain:1.0" size="61.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="txtDateSearch" alignment="CENTER" focusColor="#e8083c" layoutX="334.0" layoutY="252.0" prefHeight="31.0" prefWidth="311.0" promptText="yyyy-mm-dd">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Text layoutX="191.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Date">
+                                 <font>
+                                    <Font name="Times New Roman" size="21.0" />
+                                 </font>
+                              </Text>
+                              <TableView fx:id="tblSearchDate" layoutX="15.0" layoutY="307.0" prefHeight="249.0" prefWidth="1034.0" stylesheets="@style/TableStyles.css">
+                                <columns>
+                                  <TableColumn fx:id="columnClub" prefWidth="285.0" text="Club 1 Name" />
+                                    <TableColumn fx:id="columnScored" prefWidth="225.0" text="Scored Goals" />
+                                    <TableColumn fx:id="columnClub2" prefWidth="317.0" text="Club 2 Name" />
+                                    <TableColumn fx:id="columnScored2" prefWidth="205.0" text="Scored Goals" />
+                                </columns>
+                                 <styleClass>
+                                    <String fx:value="table-view" />
+                                    <String fx:value="label" />
+                                 </styleClass>
+                              </TableView>
+                              <JFXButton fx:id="btnSearchDate" buttonType="RAISED" layoutX="676.0" layoutY="252.0" onAction="#btnSearchDateOnAction" prefHeight="17.0" prefWidth="151.0" style="-fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50; -fx-border-width: 3;" text="Search" textFill="#1e1e1e">
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5568181818181818" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#76eaff" />
+                                          <Stop color="#76eaff" offset="0.007246376811594203" />
+                                          <Stop color="#f34fff" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                                 <font>
+                                    <Font name="Victorian LET Plain:1.0" size="21.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnExit" buttonType="RAISED" layoutX="1067.0" layoutY="26.0" onAction="#btnExitOnAction" prefHeight="48.0" prefWidth="62.0" text=" ">
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#f2b936" />
+                  <Stop color="#8820ab" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/shutdown_100px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
